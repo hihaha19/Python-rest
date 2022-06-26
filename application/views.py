@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import JsonResponse, QueryDict, HttpResponse
 from rest_framework.utils import json
 
