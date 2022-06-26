@@ -22,7 +22,6 @@ def get_user_id(userid):
     response = requests.get(url)
     data = response.json()
     for post in data:
-        print(post)
         if int(userid) == post['userID']:
             return True
 
