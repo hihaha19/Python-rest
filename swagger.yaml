@@ -1,0 +1,122 @@
+---
+swagger: "2.0"
+info:
+  version: 2.0.0
+  title: Python-rest
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: hankova.michaela19@gmail.com
+host: localhost:8000
+schemes:
+- https
+- http
+paths:
+  /posts/:
+    get:
+      tags:
+      - post
+      summary: Nájdi príspevok podľa ID alebo userID
+      operationId: addPet
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/xml
+      - application/json
+      parameters:
+      - name: id
+        in: query
+        description: ID príspevku, ktorý chcem zobraziť
+        required: false
+      - name: userid
+        in: query
+        description: ID používateľa, ktorého príspevky chcem vidieť
+        required: false
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Invalid input
+    post:
+      tags:
+      - post
+      summary: Pridanie nového príspevku
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/xml
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Pridanie nového príspevku
+        required: true
+        schema:
+          properties:
+            userID:
+              type: integer
+              example: 1
+            title:
+              type: string
+              example: Nadpis číslo 1
+              description: Nadpis príspevku
+            body:
+              type: string
+              example: Text príspevku
+          type: array
+      responses:
+        "200":
+          description: Created
+        "400":
+          description: Bad request
+  /posts/{id}:
+    put:
+      tags:
+      - post
+      summary: Upravený príspevok
+      produces:
+      - application/xml
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+      - in: body
+        name: body
+        required: false
+        schema:
+          properties:
+            title:
+              type: string
+              example: Upravený nadpis príspevku
+              description: Upravenie nadpisu príspevku
+            body:
+              type: string
+              example: Nový text príspevku
+          type: array
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: ID not found
+    delete:
+      tags:
+      - post
+      summary: Vymazanie príspevku
+      produces:
+      - application/xml
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: ID príspevku na vymazanie
+        required: true
+        type: integer
+        format: int64
+      responses:
+        "204":
+          description: OK
+        "404":
+          description: ID not found
+definitions: {}
