@@ -1,7 +1,9 @@
 # Python-rest API
 
-Proces inštalácie projektu:
-Do vývojového prostredia sa prostredníctvom git clone nakopíruje kód z GitHubu. Aktivuje sa virtual environment. python manage.py migrate a python manage.py runserver
+Popis inštalácie projektu:
+Do vývojového prostredia sa prostredníctvom git clone nakopíruje kód z GitHubu. Aktivuje sa virtual environment. 
+Prostredníctvom príkazu python manage.py migrate sa aplikujú zmeny v modeloch a následne sa môže spustiť príkaz python manage.py runserver. Server beží na localhoste,
+na porte 8000.
 
 
 ## client.py
