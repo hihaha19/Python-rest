@@ -3,7 +3,7 @@
 Popis inštalácie projektu:
 Do vývojového prostredia sa prostredníctvom git clone nakopíruje kód z GitHubu. Aktivuje sa virtual environment. 
 Prostredníctvom príkazu python manage.py migrate sa aplikujú zmeny v modeloch a následne sa môže spustiť príkaz python manage.py runserver. Server beží na localhoste,
-na porte 8000.
+na porte 8000. Teraz sa môžu (napríklad prostredníctvom Postmana) posielať requesty s GET, PUT, POST a DELETE.
 
 
 ## client.py
