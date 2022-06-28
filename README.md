@@ -1,5 +1,9 @@
 # Python-rest API
 
+Proces inštalácie projektu:
+Do vývojového prostredia sa prostredníctvom git clone nakopíruje kód z GitHubu. Aktivuje sa virtual environment. python manage.py migrate a python manage.py runserver
+
+
 ## client.py
 V súbore client.py sa nachádzajú funkcie na získanie dát z externej api. Funkcia **get_external_data** hľadá ID z externej api, ak sa toto ID nenachádza v systéme. Ak sa hľadané ID nachádza v externej api, a má rozdielny title, userID a body ako doteraz uložené príspevky v systéme, tak sa uloží do systému a funkcia vráti id príspevku. V prípade ak sa príspevok v externej api nenašiel alebo už bol uložený do systému, funkcia vráti 0.
 
